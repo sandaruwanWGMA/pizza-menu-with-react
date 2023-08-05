@@ -1,0 +1,21 @@
+
+.pizzaItem {
+    display: flex;
+    align-items: center;
+}
+
+.pizzaImage {
+    width: 100px;
+    height: 100px;
+}
+
+.details {
+    margin-left: 10px;
+}
+
+.pizzaName {
+    text-transform: uppercase;
+    font-size: 32px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+}
