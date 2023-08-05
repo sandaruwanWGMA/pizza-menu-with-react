@@ -10,7 +10,8 @@ function App() {
     return number < 10 ? `0${number}` : number.toString();
   }
 
-  const closedHour = 23;
+  const openingHour = 8;
+  const closedHour = 20;
 
   let currentDate = "";
   let time = "";
@@ -20,13 +21,15 @@ function App() {
   var currentHour = 0;
   let currentSecond = 0;
 
-  const [currentTime, setCurrentTime] = useState(time);
+  let [currentTime, setCurrentTime] = useState(time);
+  let [isOpen, setopen] = useState(false);
 
   function updateTime() {
     currentDate = new Date();
     currentHour = currentDate.getHours();
     currentSecond = currentDate.getSeconds();
     currentMinute = currentDate.getMinutes();
+    isOpen = currentHour < closedHour;
 
     amORpm = currentHour >= 12 ? "pm" : "am";
     hour = currentHour > 12 ? currentHour - 12 : currentHour;
@@ -38,29 +41,28 @@ function App() {
 
   useEffect(() => {
     updateTime();
+    setopen(isOpen);
   }, []);
 
-  const isOpen = currentHour < closedHour;
-
-  const intervalId = setInterval(updateTime, 1000);
-
-  setTimeout(() => {
-    clearInterval(intervalId);
-  }, 10000);
+  setInterval(updateTime, 1000);
 
   return (
     <>
       <h1 id="pizzaMenu"> Pizza MENU</h1>
       <PizzaMenu></PizzaMenu>
-      <footer>
+      <footer className="status">
         {isOpen ? (
-          <p className="status">
-            We are Open till 10.00 pm & You are welcome to our retaurant
+          <p>
+            {`We are Open till ${
+              closedHour - 12
+            }.00 pm & You are welcome to our retaurant`}
           </p>
         ) : (
-          <p>We are closed!</p>
+          <p style={{ fontSize: "18px", color: "tomato" }}>
+            We are closed now! Open at {openingHour} a.m
+          </p>
         )}
-        <p style={{fontSize: "24px"}}>Time is {currentTime}</p>
+        <p style={{ fontSize: "24px" }}>Time is {currentTime}</p>
       </footer>
     </>
   );
