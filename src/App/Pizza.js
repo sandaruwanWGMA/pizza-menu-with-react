@@ -4,16 +4,16 @@ import "./pizza.css"
 
 function Pizza({ pizza }) {
   return (
-    <div className="pizzaItem">
+    <div className={`pizzaItem ${pizza.soldOut ? "soldOut" : ""}`}>
       <img
-        className="pizzaImage"
+        className={`pizzaImage ${pizza.soldOut ? "soldOut" : ""}`}
         src={require(`./pizzas/${pizza.photoName}`)}
         alt="pizza img"
       ></img>
       <div className="details">
         <p className="pizzaName">{pizza.name}</p>
         <p>{pizza.ingredients}</p>
-        <p>{pizza.price}</p>
+        {pizza.soldOut ? <p>SoldOut</p> : <p>{pizza.price}</p>}
       </div>
     </div>
   );

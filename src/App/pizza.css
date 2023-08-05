@@ -19,3 +19,16 @@
     font-family: 'Courier New', Courier, monospace;
     font-weight: 500;
 }
+
+.soldOut {
+    filter: grayscale(70%);
+    color: gray;
+}
+
+p {
+    margin: 0 0 10px 0;
+}
+
+footer {
+    text-align: center;
+}
