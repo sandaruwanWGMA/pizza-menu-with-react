@@ -9,10 +9,10 @@ function Facts({ number, title, isHidden }) {
   return (
     <div
       onClick={() => setHidden(!hidden)}
-      className={`hiddenBox ${isActive ? "active" : ""}`}
+      className={`hiddenBox ${isActive ? "active" : ""} ${!hidden ? "NotHidden" : ""}`}
     >
-      <h1 className={`${hidden ? "numberWhenHidden" : "number"}`}>{number}</h1>
-      <h1 className={`${hidden ? "titleWhenHidden" : "title"}`}>{title}</h1>
+      <h1 className="number">{number}</h1>
+      <h1 className="title">{title}</h1>
 
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +20,7 @@ function Facts({ number, title, isHidden }) {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className={`icon ${hidden ? "iconWhenHidden" : ""}`}
+        className="icon"
       >
         <path
           strokeLinecap="round"
@@ -32,14 +32,14 @@ function Facts({ number, title, isHidden }) {
           }
         />
       </svg>
-      <p className={`discription ${hidden ? "hidden" : ""}`}>
+      <p className="description">
         Paragraphs are the building blocks of papers. Many students define
         paragraphs in terms of length: a paragraph is a group of at least five
         sentences, a paragraph is half a page long, etc. In reality, though, the
         unity and coherence of ideas among sentences is what constitutes a
         paragraph.
       </p>
-      <ul className={`${hidden ? "hidden" : "discriptionList"}`}>
+      <ul className="descriptionList">
         <li>Paragraphs are the building blocks of papers</li>
         <li>Many students define paragraphs in terms of length</li>
         <li>
