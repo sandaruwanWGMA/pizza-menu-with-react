@@ -10,6 +10,9 @@
 
 .hiddenBox,
 .NotHidden {
+  transform: scale(1);
+  transition: transform 0.4s ease;
+  cursor: pointer;
   width: 800px;
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -39,7 +42,7 @@
 }
 
 .hiddenBox:hover {
-  cursor: pointer;
+  transform: scale(1.01);
 }
 
 .NotHidden .number,
@@ -54,6 +57,6 @@
 
 .title,
 .icon {
-    font-size: 32px;
+  font-size: 32px;
   color: rgba(0, 0, 0, 0.7);
 }

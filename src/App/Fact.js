@@ -4,11 +4,14 @@ import "./Acordations.css";
 function Facts({ number, title, isHidden }) {
   const [isActive, setIsActive] = useState(false);
   const [hidden, setHidden] = useState(isHidden);
-  console.log(hidden);
 
   return (
     <div
-      onClick={() => setHidden(!hidden)}
+          onClick={() => {
+              setIsActive(true)
+              setHidden(!hidden)
+              console.log(isActive);
+          }}
       className={`hiddenBox ${isActive ? "active" : ""} ${!hidden ? "NotHidden" : ""}`}
     >
       <h1 className="number">{number}</h1>
