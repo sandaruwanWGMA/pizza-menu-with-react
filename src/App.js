@@ -4,8 +4,10 @@ import PizzaMenu from "./App/PizzaMenu";
 import Pizza from "./App/Pizza";
 import pizzaData from "./App/data";
 import { useEffect, useState } from "react";
+import Facts from "./App/Fact";
 
 function App() {
+
   function twoDigitNumber(number) {
     return number < 10 ? `0${number}` : number.toString();
   }
@@ -50,7 +52,7 @@ function App() {
     <>
       <h1 id="pizzaMenu"> Pizza MENU</h1>
       <PizzaMenu></PizzaMenu>
-      <footer className="status">
+      <div className="status">
         {isOpen ? (
           <p>
             {`We are Open till ${
@@ -63,7 +65,12 @@ function App() {
           </p>
         )}
         <p style={{ fontSize: "24px" }}>Time is {currentTime}</p>
-      </footer>
+      </div>
+      <Facts
+        title="Some interesting facts about restaurant"
+        number="01"
+        isHidden={true}
+      ></Facts>
     </>
   );
 }
