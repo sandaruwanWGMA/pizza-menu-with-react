@@ -6,6 +6,7 @@ import pizzaData from "./App/data";
 import { useEffect, useState } from "react";
 import Facts from "./App/Fact";
 import CustomerReviews from "./App/CustomerReviews";
+import ImageSlider from "./App/ImageSlider";
 
 function App() {
   function twoDigitNumber(number) {
@@ -71,7 +72,13 @@ function App() {
         number="01"
         isHidden={true}
       ></Facts>
-      <CustomerReviews></CustomerReviews>;
+      <CustomerReviews
+        review="Delightful pizza experience! Perfectly balanced crust, 
+        premium toppings bursting with flavor. Attentive service, cozy ambiance. 
+        A culinary masterpiece that left me craving more."
+        name="Sandaruwan WGMA"
+      ></CustomerReviews>
+      <ImageSlider></ImageSlider>
     </>
   );
 }

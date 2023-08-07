@@ -6,6 +6,7 @@
   height: 250px;
   box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
+  align-items: center;
 }
 
 .myImage {
@@ -17,9 +18,12 @@
 }
 
 .container p {
-  background: none;
   color: #fff;
   font-weight: 500;
   font-size: 18px;
   padding: 20px 20px 20px 60px;
 }
+
+
+
+
