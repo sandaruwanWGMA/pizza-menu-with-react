@@ -5,9 +5,9 @@ import Pizza from "./App/Pizza";
 import pizzaData from "./App/data";
 import { useEffect, useState } from "react";
 import Facts from "./App/Fact";
+import CustomerReviews from "./App/CustomerReviews";
 
 function App() {
-
   function twoDigitNumber(number) {
     return number < 10 ? `0${number}` : number.toString();
   }
@@ -71,6 +71,7 @@ function App() {
         number="01"
         isHidden={true}
       ></Facts>
+      <CustomerReviews></CustomerReviews>;
     </>
   );
 }
