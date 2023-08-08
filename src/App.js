@@ -72,6 +72,7 @@ function App() {
         number="01"
         isHidden={true}
       ></Facts>
+      <h2 className="customerReviews">Customer Reviews</h2>
       <CustomerReviews
         review="Delightful pizza experience! Perfectly balanced crust, 
         premium toppings bursting with flavor. Attentive service, cozy ambiance. 
